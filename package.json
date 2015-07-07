@@ -1,0 +1,24 @@
+{
+  "name": "chrome-extension-starter",
+  "version": "0.0.0",
+  "description": "chrome extension starter",
+  "main": "''",
+  "scripts": {
+    "watch": "watchify src/js/main.js -o build/js/bundle.js -v",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juancjara/chrome-extension-starter.git"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "starter"
+  ],
+  "author": "juanc.jara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juancjara/chrome-extension-starter/issues"
+  }
+}
