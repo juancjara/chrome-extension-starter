@@ -20,5 +20,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/juancjara/chrome-extension-starter/issues"
+  },
+  "dependencies": {
+    "localforage": "~1.2.4"
   }
 }
