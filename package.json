@@ -4,7 +4,10 @@
   "description": "chrome extension starter",
   "main": "''",
   "scripts": {
-    "watch": "watchify src/js/main.js -o build/js/bundle.js -v",
+    "w-background": "watchify src/js/background/main.js -o build/js/bg-bundle.js",
+    "w-content-script": "watchify src/js/content-script/main.js -o build/js/cs-bundle.js",
+    "w-simple": "watchify src/js/main.js -o build/js/bundle.js -v",
+    "watch": "npm run w-simple & npm run w-content-script & npm run w-background",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +24,5 @@
   "bugs": {
     "url": "https://github.com/juancjara/chrome-extension-starter/issues"
   },
-  "dependencies": {
-    "localforage": "~1.2.4"
-  }
+  "dependencies": {}
 }

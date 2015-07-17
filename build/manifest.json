@@ -10,5 +10,14 @@
     "storage",
     "notifications",
     "alarms"
-  ]
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/*"],
+      "js": ["js/cs-bundle.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["js/bg-bundle.js"]
+  }
 }

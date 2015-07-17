@@ -1,6 +1,6 @@
 var Notification = require('./chrome-api/notification');
 var Alarm = require('./chrome-api/alarm');
-var Storage = require('./helpers/storage');
+var Storage = require('./chrome-api/storage');
 
 Notification.create({message: 'msg'});
 
