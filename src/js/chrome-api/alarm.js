@@ -1,21 +1,21 @@
-var Alarm = {
+let Alarm = {
   actions: {},
 
-  create: function(name, alarmInfo, fn) {
+  create(name, alarmInfo, fn) {
     chrome.alarms.create(name, alarmInfo);
     Alarm.actions[name] = fn;
   },
 
-  listenAll: function() {
-    chrome.alarms.onAlarm.addListener(function(elem) {
+  listenAll() {
+    chrome.alarms.onAlarm.addListener((elem) => {
       Alarm.actions[elem.name]();
     });
   },
 
-  clearAll: function(cb) {
+  clearAll(cb) {
     chrome.alarms.clearAll(cb);
   }
 
-}
+};
 
-module.exports = Alarm;
+export default Alarm;

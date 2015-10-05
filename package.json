@@ -24,5 +24,12 @@
   "bugs": {
     "url": "https://github.com/juancjara/chrome-extension-starter/issues"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babelify": "^6.3.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
 }

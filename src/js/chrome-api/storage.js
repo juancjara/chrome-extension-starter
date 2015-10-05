@@ -1,22 +1,22 @@
-var Storage = {
+let Storage = {
   property: chrome.storage.local,
 
-  set: function(data, cb) {
-    cb = cb || function() {};
+  set(data, cb) {
+    cb = cb || () => {};
     Storage.property.set(data, cb);
   },
 
-  get: function(key, cb) {
-    cb = cb || function() {};
+  get(key, cb) {
+    cb = cb || () => {};
 
-    Storage.property.get(key, function(data) {
-      var value;
+    Storage.property.get(key, (data) => {
+      let value;
       if (key in data) {value = data[key]}
       else {value = null};
       cb(value);
     });
-  }  
+  }
 
 };
 
-module.exports = Storage;
+export default Storage;

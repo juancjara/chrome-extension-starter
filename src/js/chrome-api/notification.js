@@ -1,11 +1,11 @@
-var Notification = {
+let Notification = {
   iconUrl: '../images/default-128.png',
   title: 'Set a title',
   type: 'basic',
 
-  create: function(data, cb) {
+  create(data, cb) {
     data = data || {};
-    cb = cb || function() {};
+    cb = cb || () => {};
     var id = '' + (new Date()).getTime();
 
     chrome.notifications.create(id, {
@@ -15,6 +15,6 @@ var Notification = {
       message: data.message || ''
     }, cb);
   }
-}
+};
 
-module.exports = Notification;
+export default Notification;
