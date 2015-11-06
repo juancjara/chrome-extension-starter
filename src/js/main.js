@@ -2,6 +2,8 @@ import Notification from './chrome-api/notification';
 import Alarm from './chrome-api/alarm';
 import Storage from './chrome-api/storage';
 
+Alarm.setup();
+
 Notification.create({message: 'msg'});
 
 let doSomething = function() {
@@ -15,8 +17,7 @@ Alarm.create('create notification',
 Storage.set({foo: 'bar'}, (data) => {
   console.log('value saved');
   Storage.get('foo', (value) => {
-    console.log('value found', value)
-  })
-})
+    console.log('value found', value);
+  });
+});
 
-//promises

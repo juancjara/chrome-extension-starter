@@ -6,7 +6,7 @@ let Alarm = {
     Alarm.actions[name] = fn;
   },
 
-  listenAll() {
+  setup() {
     chrome.alarms.onAlarm.addListener((elem) => {
       Alarm.actions[elem.name]();
     });
@@ -14,8 +14,14 @@ let Alarm = {
 
   clearAll(cb) {
     chrome.alarms.clearAll(cb);
+  },
+
+  clear(name) {
+    chrome.alarms.clear(name);
   }
+
 
 };
 
 export default Alarm;
+

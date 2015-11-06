@@ -12,7 +12,7 @@ var Alarm = {
     Alarm.actions[name] = fn;
   },
 
-  listenAll: function listenAll() {
+  setup: function setup() {
     chrome.alarms.onAlarm.addListener(function (elem) {
       Alarm.actions[elem.name]();
     });
@@ -20,6 +20,10 @@ var Alarm = {
 
   clearAll: function clearAll(cb) {
     chrome.alarms.clearAll(cb);
+  },
+
+  clear: function clear(name) {
+    chrome.alarms.clear(name);
   }
 
 };
@@ -105,6 +109,8 @@ var _chromeApiStorage = require('./chrome-api/storage');
 
 var _chromeApiStorage2 = _interopRequireDefault(_chromeApiStorage);
 
+_chromeApiAlarm2['default'].setup();
+
 _chromeApiNotification2['default'].create({ message: 'msg' });
 
 var doSomething = function doSomething() {
@@ -119,7 +125,5 @@ _chromeApiStorage2['default'].set({ foo: 'bar' }, function (data) {
     console.log('value found', value);
   });
 });
-
-//promises
 
 },{"./chrome-api/alarm":1,"./chrome-api/notification":2,"./chrome-api/storage":3}]},{},[4]);
