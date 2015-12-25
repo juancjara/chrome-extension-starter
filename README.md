@@ -1,2 +1,3 @@
 # chrome-extension-starter
-Create new extension very quickly using Browserify.
+
+Chrome extension template using webpack.

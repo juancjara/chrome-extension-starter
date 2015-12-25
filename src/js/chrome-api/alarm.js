@@ -1,4 +1,5 @@
 let Alarm = {
+
   actions: {},
 
   create(name, alarmInfo, fn) {

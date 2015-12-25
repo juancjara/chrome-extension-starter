@@ -1,18 +1,18 @@
 let Storage = {
+
   property: chrome.storage.local,
 
-  set(data, cb) {
-    cb = cb || () => {};
+  set(data, cb = () => {}) {
     Storage.property.set(data, cb);
   },
 
-  get(key, cb) {
-    cb = cb || () => {};
+  get(key, cb = () => {}) {
 
-    Storage.property.get(key, (data) => {
-      let value;
-      if (key in data) {value = data[key]}
-      else {value = null};
+    Storage.property.get(key, data => {
+      let value = null;
+      if (key in data) {
+        value = data[key];
+      }
       cb(value);
     });
   }
