@@ -1,3 +1,5 @@
+/* eslint no-undef:0*/
+
 let Notification = {
 
   iconUrl: '../images/default-128.png',
@@ -11,10 +13,9 @@ let Notification = {
       type: data.type || Notification.type,
       iconUrl: data.icon || Notification.iconUrl,
       title: data.title || Notification.title,
-      message: data.message || ''
+      message: data.message || '',
     }, cb);
-
-  }
+  },
 
 };
 

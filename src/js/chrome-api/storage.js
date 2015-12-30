@@ -1,3 +1,5 @@
+/* eslint no-undef:0*/
+
 let Storage = {
 
   property: chrome.storage.local,
@@ -7,7 +9,6 @@ let Storage = {
   },
 
   get(key, cb = () => {}) {
-
     Storage.property.get(key, data => {
       let value = null;
       if (key in data) {
@@ -15,7 +16,7 @@ let Storage = {
       }
       cb(value);
     });
-  }
+  },
 
 };
 

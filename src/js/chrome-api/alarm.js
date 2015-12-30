@@ -1,3 +1,5 @@
+/* eslint no-undef:0*/
+
 let Alarm = {
 
   actions: {},
@@ -19,10 +21,8 @@ let Alarm = {
 
   clear(name) {
     chrome.alarms.clear(name);
-  }
-
+  },
 
 };
 
 export default Alarm;
-
